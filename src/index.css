@@ -1,13 +1,213 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --phone-border_old: rgb(45, 45, 45);
+    --phone-border: rgb(21, 21, 21);
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-color: dimgrey;
+  overflow-y: hidden;
+  font-family: Helvetica, sans-serif;
+}
+
+/* phone screen */
+.phone {
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 23rem;
+    height: 45rem;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 10px solid var(--phone-border);
+    border-radius: 30px;
+    box-shadow: 1px 3px 20px 12px rgb(127, 127, 127);
+}
+
+.homeButton {
+    bottom: 0;
+}
+
+.top {
+    top: 0;
+}
+
+.border {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5rem;
+    width: 100%;
+    background-color: var(--phone-border);
+    /* border-radius: 0 0 30px 30px; */
+}
+
+.phoneScreen {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,176,253,1) 100%);
+    width: 100%;
+    top: 5rem;
+    height: 33.75rem;
+    position: relative;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2.5px solid #232323;
+}
+
+.button {
+    position: absolute;
+    height: 49px;
+    width: 49px;
+    border-radius: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #3c3c3c;
+    background-color: var(--phone-border);
+    cursor: pointer;
+}
+
+.top-content {
+    position: absolute;
+    width: 100%;
+    height: 5rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.camera {
+    height: 9px;
+    width: 9px;
+    position: absolute;
+    background-color: black;
+    border: 1px solid #232323;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+
+.speaker {
+    height: 5px;
+    width: 70px;
+    position: absolute;
+    background-color: black;
+    border: 1px solid #232323;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.mic {
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    background-color: black;
+    border: 1px solid #232323;
+    left: 35%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+
+.screen {
+    text-align: center;
+    width: 100%;
+    height: 33.75rem;
+    position: relative;
+}
+
+/* screen */
+
+.lockScreen {
+    color: #fff;
+    text-align: center;
+}
+
+.dateTime {
+    position: absolute;
+    top: 3rem;
+    text-align: center;
+    width: 100%;
+}
+
+.date {
+    /* position: absolute; */
+}
+
+.time {
+    font-size: 70px;
+}
+
+.lockScreen .content {
+    top: 10rem;
+    position: absolute;
+    width: 100%;
+    height: 23.5rem;
+}
+
+/* notification */
+
+.notification {
+    background-color: rgba(35, 35, 35, 0.5);
+    border-radius: 10px;
+    position: relative;
+    width: 98%;
+    height: 4rem;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.notification .text {
+    font-size: 12px;
+    position: absolute;
+    left: 1rem;
+    cursor: pointer;
+    height: 3rem ;
+    width: 80% ;
+    top: 58%;
+    transform: translateY(-55%);
+}
+
+.notification .text, .notifImg {
+    display: inline-block;
+    position: relative;
+}
+
+.notification p {
+    text-align: left;
+    top: 50%;
+}
+
+.notifTitle {
+    font-weight: bold;
+}
+
+.notifSubtitle {
+
+}
+
+.notifContent {
+
+}
+
+.notifImg {
+    /* position: relative; */
+    width: 45px;
+    height: 45px;
+    left: 9%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
