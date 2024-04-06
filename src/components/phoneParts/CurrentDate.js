@@ -25,7 +25,7 @@ const CurrentDate = () => {
         const date = new Date();
         let hours = date.getHours();
         const minutes = String(date.getMinutes()).padStart(2, '0');
-        const ampm = hours >= 12 ? 'PM' : 'AM';
+        // const ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12 || 12; // Convert 24-hour time to 12-hour time
         setCurrentTime(`${hours}:${minutes}`);
     };

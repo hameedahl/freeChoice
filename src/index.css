@@ -142,10 +142,6 @@ body {
     width: 100%;
 }
 
-.date {
-    /* position: absolute; */
-}
-
 .time {
     font-size: 70px;
 }
@@ -210,4 +206,9 @@ body {
     left: 9%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* message app */
+.messageApp {
+    background-color: #fff;
 }
