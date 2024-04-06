@@ -1,4 +1,4 @@
-import LockScreen from "./LockScreen";
+import LockScreen from "../screens/LockScreen";
 const Screen = () => {
     return (<div className="phoneScreen">
         <LockScreen/>

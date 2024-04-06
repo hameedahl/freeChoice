@@ -1,4 +1,4 @@
-const Notification = ({icon, title, subtitle, content}) => {
+const Notification = ({icon, title, subtitle, content, app}) => {
     const handleClick = () => {
         
     }

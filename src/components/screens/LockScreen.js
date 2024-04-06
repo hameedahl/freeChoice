@@ -1,5 +1,5 @@
-import CurrentDate from "./CurrentDate";
-import Notification from "./Notification";
+import CurrentDate from "../phoneParts/CurrentDate";
+import Notification from "../Notification";
 
 const LockScreen = () => {
 
@@ -9,7 +9,8 @@ const LockScreen = () => {
             <Notification icon= "" 
                         title = "Alice" 
                         subtitle = "Alice, Bob, Chris" 
-                        content = "OMG did you guys see this??" />
+                        content = "OMG did you guys see this??"
+                        app = "msg" />
         </div>
         
     </div> );

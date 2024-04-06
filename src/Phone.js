@@ -1,6 +1,6 @@
-import HomeButton from "./HomeButton";
-import Screen from "./Screen";
-import Top from "./Top";
+import HomeButton from "./components/phoneParts/HomeButton";
+import Screen from "./components/phoneParts/Screen";
+import Top from "./components/phoneParts/Top";
 
 const Phone = () => {
     return ( <div className="phone">
