@@ -22,7 +22,8 @@ const ChatScreen = ({msg, changeScreen, prevScreen}) => {
                         <MessageBubble id={msg.id}
                                         from={msg.sender} 
                                         text= {msg.msgText}
-                                        type={msg.type}/></div>
+                                        type={msg.type}
+                                        order={msg.order}/></div>
                     ))}
             </div>
             <div className="chatBottom">

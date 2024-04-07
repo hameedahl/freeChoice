@@ -7,8 +7,8 @@ const LockScreen = ({changeScreen, currDate, currTime}) => {
         <CurrentDate/>
         <div className="content">
             <Notification icon= "" 
-                        title = "Alice" 
-                        subtitle = "Alice, Bob, Chris" 
+                        title = "Bella" 
+                        subtitle = "Bella, Chris, Jess & Matt" 
                         content = "OMG did you guys see this??"
                         app = {<MessageApp changeScreen={changeScreen}/>}
                         changeScreen={changeScreen} />
