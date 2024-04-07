@@ -1,5 +1,5 @@
 const HomeScreen = ({changeScreen, activeScreen}) => {
-    return ( <div className="homeScreen screen">
+    return (<div className="homeScreen screen">
     </div> );
 }
  

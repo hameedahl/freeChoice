@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 
 const CurrentDate = () => {
-    const [currentDate, setCurrentDate] = useState('');
-    const [currentTime, setCurrentTime] = useState('');
+    const [currDate, setCurrentDate] = useState('');
+    const [currTime, setCurrentTime] = useState('');
 
     // get date
     useEffect(() => {
@@ -40,8 +40,8 @@ const CurrentDate = () => {
   
     return (
       <div className='dateTime'>
-        <p className='date'>{currentDate}</p>
-        <p className='time'>{currentTime}</p>
+        <p className='date'>{currDate}</p>
+        <p className='time'>{currTime}</p>
       </div>
     );
 }

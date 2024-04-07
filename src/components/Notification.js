@@ -1,5 +1,4 @@
 const Notification = ({icon, title, subtitle, content, app, changeScreen}) => {
-
     return (<div className="notification" 
                  onClick={() => {changeScreen(app)}}>
         <img src={icon} alt="" className="notifImg"/>

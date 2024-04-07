@@ -3,12 +3,8 @@ import Notification from "../Notification";
 import MessageApp from "./MessageApp";
 
 const LockScreen = ({changeScreen, currDate, currTime}) => {
-
     return (<div className="lockScreen screen">
-        <div className='dateTime'>
-            <p className='date'>{currDate}</p>
-            <p className='time'>{currTime}</p>
-        </div>
+        <CurrentDate/>
         <div className="content">
             <Notification icon= "" 
                         title = "Alice" 
