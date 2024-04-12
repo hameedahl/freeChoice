@@ -10,6 +10,7 @@ const MessageApp = ({changeScreen}) => {
         {id: 5, from: "30124", prev: "Your Grubhub order is here!"},
         {id: 6, from: "Mom", prev: "I'll be home in 10."},
     ];
+    
     return (
         <div className="messageApp screen">
             <h1>Messages</h1>
