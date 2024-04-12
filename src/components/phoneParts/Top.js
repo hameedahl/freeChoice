@@ -1,5 +1,5 @@
 const Top = () => {
-    return (<div className="top border">
+    return (<div className="topPhone border">
         <div className="top-content">
             <div className="mic"></div>
             <div className="speaker"></div>

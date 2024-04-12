@@ -39,10 +39,10 @@ body {
     cursor: pointer;
 }
 
-.top {
+.topPhone {
     top: 0;
     position: relative;
-    /* z-index: 1; */
+    z-index: 2;
 }
 
 .border {
@@ -52,7 +52,6 @@ body {
     height: 5rem;
     width: 100%;
     background-color: var(--phone-border);
-    /* border-radius: 0 0 30px 30px; */
 }
 
 .phoneScreen {
@@ -64,6 +63,7 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 2.5px solid #232323;
+    z-index: -3;
 }
 
 .button {
@@ -86,6 +86,8 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+
 }
 
 .camera {
@@ -128,7 +130,6 @@ body {
     text-align: center;
     width: 100%;
     top: 0px;  
-    background-color: red;
     height: var(--screen-height);
     position: relative;
     z-index: -1;
@@ -151,13 +152,11 @@ body {
     top: 3rem;
     text-align: center;
     width: 100%;
-    /* z-index: -2; */
 }
 
 .time {
     position: relative;
     font-size: 70px;
-    /* z-index: -2; */
 }
 
 .lockScreen .content {
@@ -579,8 +578,9 @@ body {
 }
 
 .picTokApp {
-    background-color: #fff;
+    background-color: #000;
     position: relative;
+    color: #fff;
 }
 
 .picTokApp h1 {
@@ -596,7 +596,6 @@ body {
     transform: translateX(-50%);
     top: 40px;
     overflow-y: auto;
-    /* z-index: 0; */
     height: calc(var(--screen-height) - 100px);
 }
 
@@ -665,10 +664,10 @@ body {
 .bottomMenu {
     position: absolute;
     width: 100%;
-    /* z-index: 1; */
     bottom: 0;
     height: 20px;
-    background-color: #fff;
+    background-color: #000;
+
 }
 
 .bottomMenu ul {
@@ -687,43 +686,29 @@ body {
 }
 
 .pushNotifs {
-    position: relative;
-    width: 100%;
-    top: -10px;
-    height: 80px;
-    background-color: blue;
-    z-index: 3 !important;
-
-    /* 
     position: absolute;
-    background-color: rgb(78, 78, 78);
+    width: 100%;
+    top: 10px;
+    height: 80px;
+    z-index: 1;
     color: white;
-    
-    
-    animation-name: example;
-    animation-duration: 1.5s;
-    animation-timing-function: linear; */
+    animation-name: slide-down;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+
 
 }
 
 .pushNotifs .notification {
     background-color: rgb(78, 78, 78);
     box-shadow: 0 3px 0 rgba(0,0,0,0.2);
-    z-index: 3 !important;
-
-
 }
 
 
-@keyframes example {
-    /* 0%   { z-index: -1; top:-80px;} */
-    /* 25%  {z-index: -1; top:-60px;} */
-    /* 50%  {z-index: -1; top:-40px;} */
-    /* 75%  {z-index: -1;top: -20px;} */
-    /* 100%  {z-index: 2; top: 10px;} */
-
-  }
-
+@keyframes slide-down {
+    0%   { z-index: 1; top:-80px;} 
+    100%  {z-index: 1; top: 10px;}
+}
 
 /* Notes */
 
@@ -739,4 +724,287 @@ body {
     width: 95%;
     margin: auto;
     text-align: left;
+}
+
+
+
+
+/* fitFocus */
+
+.fitFocus {
+    background-color: #2f71ff;
+    color: #fff;
+}
+
+.fitFocus h1 {
+    position: relative;
+    top: 90px;
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #fff;
+}
+.fitFocus h2 {
+    position: relative;
+    top: 120px;
+    font-size: 15px;
+}
+
+
+.fFmenu {
+    position: absolute;
+    list-style: none;
+    text-align: center;  
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 100%;
+}
+
+.fFmenu li {
+    cursor: pointer;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.fFmenu li:hover {
+    font-weight: bold;
+}
+
+
+.fFWindow {
+    position: absolute;
+    width: 90%;
+    height: 400px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    color: black;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.fFWindow h3 {
+    position: relative;
+    top: 30px;
+    font-size: 25px;
+}
+
+.fFWinContent {
+    position: relative;
+    top: 50px;
+    margin: auto;
+    width: 85%;
+    /* background-color: red; */
+    height: 70%;
+}
+
+.goalsList {
+    list-style: none;
+    text-align: left;
+}
+
+.goalsList li {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.ffBtn {
+    position: absolute;
+    background-color: #2f71ff;
+    color: #fff;
+    padding: 5px;
+    width: 40%;
+    border-radius: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.ffBtn:hover {
+    font-weight: bold;
+}
+
+.fFWinContent input {
+    margin-right: 5px;
+}
+
+.fFWinContent p {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #2f71ff;
+}
+
+.celMsg {
+    position: relative;
+    top: 300px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.celMsg span {
+    cursor: pointer;
+}
+
+.disContent {
+    position: relative;
+    overflow-y: auto;
+}
+
+.disContent div {
+    position: relative;
+    width: 100%;
+    background-color: #79a3fd;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}
+
+.disContent p {
+    position: relative;
+    color: #000;
+    text-align: left;
+    font-size: 15px;
+    top: -10px;
+}
+
+/* Lucky Tap */
+
+.luckyTap {
+    background-color: #27b227;
+    color: #fff;
+}
+
+.gifts {
+    position: absolute;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 100px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gifts div {
+    cursor: pointer;
+}
+
+.gifts div:hover {
+    text-shadow: 2px 3px 30px  rgb(255, 225, 103);
+}
+
+.luckyTap h1 {
+    position: relative;
+    top: 60px;
+}
+
+.luckyTap h2 {
+    position: absolute;
+    top: 120px;
+    font-size: 18px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: italic;
+}
+
+.luckyTap h3 {
+    position: absolute;
+    bottom: 90px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.prizeReveal {
+    position: absolute;
+    width: 80%;
+    height: 300px;
+    background-color: #fff;
+    color: #000;
+    left: 50%;
+    top: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 10px;
+    box-shadow: 1px 3px 20px 5px #68e668;
+}
+
+.prize-content {
+    position: relative;
+    height: 100%;
+}
+.prizeReveal h4 {
+    position: relative;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.prizeReveal p {
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 25px;
+    width: 80%;
+}
+
+.prizeBtn {
+    position: absolute;
+    bottom: 10px;  
+    background-color: #ffc800;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+}
+
+.prizeBtn:hover {
+    background-color: #fbd240;
+}
+
+
+.survey h4 {
+    font-size: 19px;
+    width: 100%;
+
+}
+
+.survey-content {
+    overflow-y: auto;
+    height: 70%;
+    font-size: 30px;
+    /* background-color: red; */
+}
+
+.claimBtn {
+    margin-top: 15px;
+    /* padding: 15px; */
+    font-size: 15px;
+    position: relative;
+}
+
+
+.rand {
+    color: #45c445;
 }

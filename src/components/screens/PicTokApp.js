@@ -11,6 +11,8 @@ const PicTok = ({changeScreen}) => {
         caption: "Happy Spring!", img: "/spring.gif", isVideo: false},
         {id: 2, user: "@foodies", likes: "10K", comments: "1K", 
         caption: "What's your favorite burger place?", img:"/food.jpeg", isVideo: false},
+        {id: 6, user: "@fitFocusOfficial", likes: "13K", comments: "125", 
+        caption: "Discover the magic of yoga with FitFocus. Strengthen, balance, and find your calm. Start your yoga journey today! 🧘‍♂️💫 #FitFocus", img: "/yoga.jpeg", isVideo: false},
         {id: 3, user: "@stargazer21", likes: "1M", comments: "100K", 
         caption: "#eclipse2024", img: "/eclipse.jpg", isVideo: false},
         {id: 4, user: "@funnyVideos", likes: "100K", comments: "3K", 
