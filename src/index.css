@@ -963,7 +963,7 @@ body {
     margin: auto;
     margin-top: 50px;
     font-size: 25px;
-    width: 80%;
+    width: 100%;
 }
 
 .prizeBtn {
@@ -987,24 +987,47 @@ body {
 .survey h4 {
     font-size: 19px;
     width: 100%;
-
 }
 
 .survey-content {
     overflow-y: auto;
     height: 70%;
-    font-size: 30px;
-    /* background-color: red; */
+    width: 95%;
+    margin: auto;
 }
 
 .claimBtn {
     margin-top: 15px;
-    /* padding: 15px; */
     font-size: 15px;
     position: relative;
 }
 
+.question {
+    position: relative;
+    top: 15px;
+    margin-bottom: 20px;
+}
+
+.question p {
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+}
+
+.nextBtn {
+    position: relative;
+    margin: auto;
+    background-color: #45c445;
+    width: 30%;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+}
 
 .rand {
-    color: #45c445;
+    color: #da3b3b;
 }
+

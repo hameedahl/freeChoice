@@ -12,8 +12,6 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
     const [showDiscover, setDiscover] = useState(false);
     const [showMsg, setShowMsg] = useState(false);
     const [showShareMsg, setShowShareMsg] = useState(false);
-    // fill out survey to claim your prize!
-    // notification that your friends just posted
     // envy thing
     // message from your friend
     useEffect(() => {
@@ -24,7 +22,9 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
                 title = "LuckyTap" 
                 subtitle = "Surprise Gift Inside! 🎉" 
                 content = "Tap here to reveal your surprise 🎁💰"
-                app = {<LuckyTap changeScreen={changeScreen}/>}
+                app = {<LuckyTap changeScreen={changeScreen} 
+                            pushNotif={pushNotif} 
+                            setNotif={setNotif}/>}
                 changeScreen={changeScreen} />)
             pushNotif(true)
         }, 10000)

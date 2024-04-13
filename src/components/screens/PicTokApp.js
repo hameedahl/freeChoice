@@ -3,16 +3,26 @@ import { FaHeart } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { FaCirclePlus } from "react-icons/fa6";
+import Notification from "../Notification";
+import EventEnvy from "./EventEnvy";
+import { MdEvent } from "react-icons/md";
 
-const PicTok = ({changeScreen}) => {
+const PicTok = ({changeScreen, pushNotif, setNotif}) => {
     var pathRoot = process.env.PUBLIC_URL + "/images/picTok"
+    // add posts of partying and travel and shopping!!!
+    // add spring tuftsonia pics on eventenvy
+    //
     const posts = [
         {id: 1, user: "@jess", likes: "100", comments: "10", 
         caption: "Happy Spring!", img: "/spring.gif", isVideo: false},
+        {id: 7, user: "@scientificDigest", likes: "1K", comments: "90", 
+        caption: "What was the last big decision you made?", img: "/sciD.jpg", isVideo: false},
         {id: 2, user: "@foodies", likes: "10K", comments: "1K", 
         caption: "What's your favorite burger place?", img:"/food.jpeg", isVideo: false},
         {id: 6, user: "@fitFocusOfficial", likes: "13K", comments: "125", 
         caption: "Discover the magic of yoga with FitFocus. Strengthen, balance, and find your calm. Start your yoga journey today! 🧘‍♂️💫 #FitFocus", img: "/yoga.jpeg", isVideo: false},
+        {id: 8, user: "@tech&science", likes: "19K", comments: "2450", 
+        caption: "This is your daily reminder to take a break from technology 🏖️", img: "/brainphone.jpg", isVideo: false},
         {id: 3, user: "@stargazer21", likes: "1M", comments: "100K", 
         caption: "#eclipse2024", img: "/eclipse.jpg", isVideo: false},
         {id: 4, user: "@funnyVideos", likes: "100K", comments: "3K", 
@@ -20,10 +30,35 @@ const PicTok = ({changeScreen}) => {
         {id: 5, user: "@travelGuide", likes: "13K", comments: "125", 
         caption: "paris always a pleasure <3", img: "/paris.mp4", isVideo: true},
     ]
+
+    const notify = () => {
+        setTimeout(() => {
+            setNotif(
+            <Notification
+                iconColor = "#da3b3b" 
+                iconImg = {<MdEvent/>} 
+                title = "EventEnvy" 
+                subtitle = "Don't Miss Out! Exciting Event Alert 🚀" 
+                content = "Open for more details 💃🪩🕺"
+                app = {<EventEnvy changeScreen={changeScreen} 
+                            pushNotif={pushNotif} 
+                            setNotif={setNotif}/>}
+                changeScreen={changeScreen}/>)
+            pushNotif(true);
+        }, 2000)
+    }
+
+    const handleScroll = (e) => {
+        const atBottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+        if (atBottom) {
+            notify();
+        }
+    }
+
     return (
         <div className="picTokApp screen">
             <h1>PicTok</h1>
-            <div className="feed">
+            <div className="feed" onScroll={(e) => handleScroll(e)}>
                 {posts.map((post) => (
                     <div key={post.id} className="post">
                         <div className="imgBox">
