@@ -8,7 +8,6 @@ import { IoIosArrowForward } from "react-icons/io";
 const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
     const [showPrize, setShowPrize] = useState(false)
     const [showSurvey, setShowSurvey] = useState(false)
-    const [showEndMsg, setShowEndMsg] = useState(false)
     const [questionIndex, setQuestionIndex] = useState(0)
 
     const questions = [
@@ -24,14 +23,13 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
 
     const notify = () => {
         setQuestionIndex(questionIndex + 1)
-        setShowEndMsg(true);
         setTimeout(() => {
             setNotif(
             <Notification
                 iconColor = "#e9155c" 
                 iconImg = {<GiPhotoCamera />} 
                 title = "PicTok" 
-                subtitle = "Your friend @jess jut posted" 
+                subtitle = "Your friend @jess just posted" 
                 content = "Be the first to comment!"
                 app = {<PicTok changeScreen={changeScreen} 
                             pushNotif={pushNotif} 
@@ -71,20 +69,9 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
                         <>
                             <h4>Thank you! Your Response has been recorded</h4>
                             <h5>$500 was added to your account ending in 1234!</h5> <br />
-                            <h6>This survey was brought to you by ...For more information on cognition, our PicTok @bbh</h6>
+                            <h6>This survey was brought to you by ...For more information on cognition, visit our PicTok @bbh</h6>
                         </>}
                     </div>
-
-                    {/* {questions.map((question) => (
-                        <div key={question.id} className="question">
-                            <p>{question.ques}</p>
-                            <p>A. {question.choices[0]}</p>
-                            <p>B. {question.choices[1]}</p>
-                            <p>C. {question.choices[2]}</p>
-                        </div>
-                    ))}
-                    {showEndMsg && <h5>$500 was added to your account!</h5>}
-                    <div className="claimBtn prizeBtn" onClick={() => (notify())}>Claim Your Reward!</div> */}
                 </div>
             </div>}
             <div className="gifts">

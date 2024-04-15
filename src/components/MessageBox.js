@@ -1,4 +1,5 @@
 import ChatScreen from "./screens/ChatScreen";
+import { HiUser } from "react-icons/hi2";
 
 const MessageBox = ({msg, changeScreen}) => {
     return (
@@ -7,10 +8,15 @@ const MessageBox = ({msg, changeScreen}) => {
                             <ChatScreen msg={msg} 
                                         changeScreen={changeScreen} 
                                         prevScreen={
-                                            <MessageBox msg={msg}   
-                                                        changeScreen={changeScreen} />}/>))}>
-            <p className="msgFrom">{msg.from}</p>
-            <p className="msgPrev">{msg.prev}</p>
+                                        <MessageBox msg={msg}   
+                                            changeScreen={changeScreen} />}/>))}>
+            <div className="msgBox-profile">
+                <HiUser className="profile-icon"/>
+            </div>
+            <div className="msgBox-text">
+                <p className="msgFrom">{msg.from}</p>
+                <p className="msgPrev">{msg.prev}</p>
+            </div>                                                
         </div>
     );
 }

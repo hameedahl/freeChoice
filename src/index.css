@@ -169,15 +169,30 @@ body {
 .topBar {
     position: absolute;
     width: 100%;
-    text-align: center;
+}
+
+.topBar-content {
+    padding: 5px 15px;
+    width: 100%;
+    color: #fff;
     font-size: 14px;
     display: flex;
     justify-content: space-between;
     top: 0;
     background-color: transparent;
-    color: #fff;
     height: 20px;
     z-index: 0;
+}
+
+.top-time {
+    font-size: 13px;
+}
+
+.topRight {
+    display: flex;
+    justify-content: space-between;
+    width: 16%;
+    font-size: 15px;
 }
 
 /* notification */
@@ -188,7 +203,6 @@ body {
     position: relative;
     width: 98%;
     height: 4rem;
-    /* display: flex; */
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 10px;
@@ -196,7 +210,6 @@ body {
 
 .notification .text {
     font-size: 12px;
-
     position: relative;
     left: 2rem;
     cursor: pointer;
@@ -235,8 +248,48 @@ body {
 }
 
 /* message app */
+
+.msgBox-profile {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background-color: #9499A3;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.messageBox {
+    position: relative;
+    font-size: 14px;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.msgPrev {
+    color: #9499A3;
+    font-size: 12px;
+    padding-bottom: 20px;
+    border-bottom: .1px solid #a7a8a9;
+}
+
+.msgBox-text {
+    width: 85%;
+    position: absolute;
+}
+
+.messageBox div {
+    display: inline-block;
+}
+
+.msgBox-profile .profile-icon {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    color: #fff;
+}
+
 .messageApp, .chatScreen {
-    background-color: #fff;
+    background-color: #000;
 }
 
 .msgList {
@@ -244,20 +297,24 @@ body {
     list-style: none;
     font-size: 17px;
     text-align: left;
+    padding: 20px;
+
 }
 
 .msgList li {
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
-    border-bottom: 1px solid #d0d0d0;
-
 }
 
 .messageApp h1 {
-    background-color: #e5e5e5;
-    border-bottom: 1px solid #d0d0d0;
+    position: relative;
+    top: 30px;
+    height: 80px;
+    color: #fff;
     text-align: left;
-    padding: 10px;
+    padding: 15px;
+    padding-left: 20px;
+
 }
 
 .msgFrom {
@@ -268,25 +325,45 @@ body {
 
 .chatScreen {
     overflow-y: hidden;
+    background-color: #1e1e1e;
+    color: #fff;
 }
 
 .chatTop {
-    background-color: #e5e5e5;
+    background-color: #373639;
     position: relative;
     width: 100%;
-    height: 30px;
-    border-bottom: 1px solid #d0d0d0;
-    font-size: 10px;
+    height: 95px;
+    border-bottom: 1px solid #000000;
+    font-size: 11px;
+    padding: 5px 0px;
 }
 
 .msgBackBtn {
     width: 18%;
     position: absolute;
-    left: 0;
+    left: -23px;
     top: 50%;
     transform: translateY(-50%); 
     cursor: pointer;
-    color: rgb(0, 4, 255);
+    color: #0079bb;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.profile {
+    height: 50px;
+    width: 50px;
+    background-color: #9499A3;
+    border-radius: 50%;
+}
+
+.profile-icon {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
 }
 
 .phoneIcon {
@@ -294,7 +371,10 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%); 
-    color: rgb(0, 4, 255);
+    color: #0079bb;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .headerContainer {
@@ -304,6 +384,11 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); 
+    padding: 10px;
+}
+
+.headerContainer p {
+    font-size: 13px;
 }
 
 .chatTopContent div {
@@ -320,19 +405,30 @@ body {
 
 .chatBottom {
     position: absolute;
-    bottom: 3%;
+    bottom: -9px;
     width: 100%;
-    background-color: #fff;
+}
+
+.keyboard {
+    position: relative;
+    width: 100%;
+    height: 300px;
 }
 
 .keyboard img {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
     width: 100%;
+    height: 300px;
 }
 
 .chatContent {
     position: relative;
     width: 100%;
-    height: 40%;
+    height: 35%;
     overflow-y: auto;
 }
 
@@ -342,107 +438,37 @@ body {
 .chat {
     --rad: 20px;
     --rad-sm: 3px;
-    font: 16px/1.5 sans-serif;
+    font: 15px/1.5 sans-serif;
     display: flex;
     flex-direction: column;
     padding: 20px;
     max-width: 500px;
     margin: auto;
-  }
-  
-.msg {
+}
+
+.chat-div {
     position: relative;
-    max-width: 75%;
-    padding: 7px 15px;
-    margin-bottom: 20px;
-    cursor: pointer;
+    top: -20px;
 }
 
-.msg.sent {
-    border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
-    background: #42a5f5;
-    color: #fff;
-    /* moves it to the right */
-    margin-left: auto;
-    text-align: left;
-
-}
-
-.msg.rcvd {
-    border-radius: var(--rad-sm) var(--rad) var(--rad) var(--rad-sm);
-    background: #f1f1f1;
-    color: #555;
-    /* moves it to the left */
-    margin-right: auto;
-    text-align: left;
-
-}
-
-/* Improve radius for messages group */
-
-.msg.sent:first-child,
-.msg.rcvd+.msg.sent {
-    border-top-right-radius: var(--rad);
-}
-
-.msg.rcvd:first-child,
-.msg.sent+.msg.rcvd {
-    border-top-left-radius: var(--rad);
-}
-
-
-/* time */
-
-.msg::before {
-    content: attr(data-time);
-    font-size: 0.8rem;
-    position: absolute;
-    bottom: 100%;
-    color: #888;
-    white-space: nowrap;
-    /* Hidden by default */
-    display: none;
-}
-
-.msg.sent::before {
-    right: 15px;
-}
-
-.msg.rcvd::before {
-    left: 15px;
-}
-
-
-/* Show time only for first message in group */
-
-.msg:first-child::before,
-.msg.sent+.msg.rcvd::before,
-.msg.rcvd+.msg.sent::before {
-/* Show only for first message in group */
-    display: block;
-}
-
-  
-  .chat {
+.chat {
     width: 100%;
     display: flex;
     flex-direction: column;
+}
 
-  }
-  
-  .messages {
-    margin-top: 30px;
+.messages {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .message {
+}
+
+.message {
     border-radius: 20px;
     padding: 4px 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
     display: inline-block;
-  }
+    background-color: red;
+}
   
   .rcvd {
     align-items: flex-start;
@@ -450,56 +476,64 @@ body {
   
   .rcvd .message {
     margin-right: 25%;
-    background-color: #EEE;
+    background-color: #3b3b3d;
     position: relative;
+    text-align: left;
 
   }
   
   .rcvd .message.last:before {
     content: "";
     position: absolute;
-    /* z-index: 0; */
     bottom: 0;
     left: -7px;
     height: 20px;
     width: 20px;
-    background: #EEE;
+    background: #3b3b3d;
     border-bottom-right-radius: 15px;
   }
   .rcvd .message.last:after {
     content: "";
     position: absolute;
-    /* z-index: 1; */
     bottom: 0;
     left: -10px;
     width: 10px;
     height: 20px;
-    background: white;
+    background: #1e1e1e;
     border-bottom-right-radius: 10px;
-
   }
   
   .sent {
     align-items: flex-end;
+    text-align: right;
   }
-  
+
+  .rcvd .not-last, .sent .not-last  {
+    margin-bottom: -8px;
+  }
+
+  .rcvd .last, .sent .last  {
+    margin-bottom: -6px;
+  }
+
   .sent .message {
     color: white;
     margin-left: 25%;
     background: rgb(0, 120, 254);
     position: relative;
+
   }
   
   .sent .message.last:before {
     content: "";
     position: absolute;
-    /* z-index: 0; */
     bottom: 0;
     right: -8px;
     height: 20px;
     width: 20px;
     background: rgb(0, 120, 254);
     border-bottom-left-radius: 15px;
+
 
   }
   
@@ -511,7 +545,7 @@ body {
     right: -10px;
     width: 10px;
     height: 20px;
-    background: white;
+    background: #1e1e1e;
     border-bottom-left-radius: 10px;
   } 
 
@@ -596,7 +630,46 @@ body {
     transform: translateX(-50%);
     top: 40px;
     overflow-y: auto;
-    height: calc(var(--screen-height) - 100px);
+    height: calc(var(--screen-height) - 120px);
+}
+
+.bottomMenu-content {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.bottomMenu-content div {
+    cursor: pointer;
+}
+
+.bottomMenu p {
+    position: absolute;
+    background-color: red;
+    font-size: 8px;
+    border-radius: 50%;
+    padding: 5px;
+
+}
+
+.bell p {
+    right: -10px;
+    top: -5px;
+}
+
+.msg-picTok p {
+    right: -5px;
+    top: -5px;
+}
+
+.bell, .msg-picTok {
+    position: relative;
+    
 }
 
 * {
@@ -664,21 +737,10 @@ body {
 .bottomMenu {
     position: absolute;
     width: 100%;
-    bottom: 0;
-    height: 20px;
+    bottom: 6px;
+    height: 50px;
     background-color: #000;
-
-}
-
-.bottomMenu ul {
-    width: 100%;
-    list-style: none;
-}
-
-.bottomMenu ul li {
-    display: inline-block;
-    margin-right: 30px;
-    font-size: 20px;
+    border-top: .5px solid #444444;
 }
 
 .pushNotifs .notification .text {
@@ -991,7 +1053,7 @@ body {
 
 .survey-content {
     overflow-y: auto;
-    height: 70%;
+    height: 65%;
     width: 95%;
     margin: auto;
 }
@@ -1004,8 +1066,7 @@ body {
 
 .question {
     position: relative;
-    top: 15px;
-    margin-bottom: 20px;
+    top: 8px;
 }
 
 .question p {
@@ -1015,16 +1076,109 @@ body {
 }
 
 .nextBtn {
-    position: relative;
+    position: absolute;
+    /* bottom: 0; */
+    right: 0;
     margin: auto;
     background-color: #45c445;
-    width: 30%;
+    width: 20%;
     color: #fff;
-    padding: 10px;
+    padding: 5px;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
     z-index: 1;
+}
+
+/* EventEnvy */
+.eventEnvy {
+    background-color: #fff;
+    color: #000;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.event {
+    position: relative;
+    height: 95%;
+    text-align: left;
+}
+
+.event h6 {
+    padding-left: 15px;
+    font-weight: 0;
+}
+
+.event img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event h3 {
+    padding: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.eventIcon, .event-details div {
+    display: inline-block;
+}
+
+.eventIcon {
+    margin-right: 20px;
+    font-size: 23px;
+    color: #888;
+}
+
+.event-details {
+    padding: 15px;
+}
+
+.e-detail {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.e-detail div {
+    display: inline-block;
+}
+
+
+.e-detail p:nth-child(2) {
+    padding-top: 5px;
+    font-size: 13px;
+    color: #888;
+}
+
+.moreEvents {
+    background-color: #da3b3b;
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+}
+
+.recEvent {
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+
+    .e-detail p:nth-child(2), .eventIcon {
+        color: black;
+    }
+}
+
+.recEvent img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recEvent h4 {
+    width: 100%;
+    padding: 10px 0;
+    font-style: italic;
 }
 
 .rand {

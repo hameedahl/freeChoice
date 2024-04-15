@@ -12,9 +12,10 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
     const [showDiscover, setDiscover] = useState(false);
     const [showMsg, setShowMsg] = useState(false);
     const [showShareMsg, setShowShareMsg] = useState(false);
-    // envy thing
-    // message from your friend
-    useEffect(() => {
+    const [startNotif, setStartNotif] = useState(false);
+    
+    // make it any close button
+    const notify = () => {
         setTimeout(() => {
             setNotif(<Notification
                 iconColor = "#27b227" 
@@ -28,7 +29,7 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
                 changeScreen={changeScreen} />)
             pushNotif(true)
         }, 10000)
-    }, [showLog])
+    }
 
     const goals = () => {
         setGoals(true);
@@ -70,15 +71,15 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
 
                     </div>}
             {showGoals && <div className="goals fFWindow">
-                <IoMdClose className="closeBtn" onClick={() => (handleClose())}/>
+                <IoMdClose className="closeBtn" onClick={() => {handleClose(); notify();}}/>
                 <h3>Set A Goal 🏆</h3>
                 <div className="fFWinContent">
                     <ul className="goalsList">
-                        <li><input type="checkbox"/>Run a 5K Race</li>
-                        <li><input type="checkbox"/>Achieve Weight Loss Milestone</li>
-                        <li><input type="checkbox" defaultChecked/>Master a New Yoga Pose</li>
-                        <li><input type="checkbox"/>Increase Daily Step Count</li>
-                        <li><input type="checkbox"/>Complete a Fitness Challenge</li>
+                        <li><input type="checkbox" name="goal"/>Run a 5K Race</li>
+                        <li><input type="checkbox" name="goal"/>Achieve Weight Loss Milestone</li>
+                        <li><input type="checkbox" name="goal" defaultChecked/>Master a New Yoga Pose</li>
+                        <li><input type="checkbox" name="goal"/>Increase Daily Step Count</li>
+                        <li><input type="checkbox" name="goal"/>Complete a Fitness Challenge</li>
                     </ul>
                     {showMsg && <p>We've set daily remainders to help you stay on track! </p>}
                     <div className="ffBtn" onClick={() => (handleBtn())}>Set</div>
@@ -89,11 +90,11 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
                 <h3>Log Workouts 🏋️‍♀️</h3>
                 <div className="fFWinContent">
                     <ul className="goalsList">
-                        <li><input type="checkbox"/>High-Intensity Interval Training (HIIT) Circuit</li>
-                        <li><input type="checkbox"/>Strength Training with Resistance Bands</li>
-                        <li><input type="checkbox" defaultChecked/>Yoga Flow for Stress Relief</li>
-                        <li><input type="checkbox"/>Outdoor Running Challenge</li>
-                        <li><input type="checkbox"/>Complete a Fitness Challenge</li>
+                        <li><input type="checkbox" name="workout"/>High-Intensity Interval Training (HIIT) Circuit</li>
+                        <li><input type="checkbox" name="workout"/>Strength Training with Resistance Bands</li>
+                        <li><input type="checkbox" name="workout" defaultChecked/>Yoga Flow for Stress Relief</li>
+                        <li><input type="checkbox" name="workout"/>Outdoor Running Challenge</li>
+                        <li><input type="checkbox" name="workout"/>Complete a Fitness Challenge</li>
                     </ul>
                     {showMsg && <p>Great Work! </p>}
                     <div className="ffBtn" onClick={() => (handleBtn())}>Log</div>
@@ -113,7 +114,6 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
 
                     <div>Sport-Specific Training Programs</div>
                     <p>Explore specialized training programs tailored to specific sports or activities, such as soccer, basketball, or martial arts, to enhance performance and skills.</p>
-
                 </div>
             </div>}
         </div>

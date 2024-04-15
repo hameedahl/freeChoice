@@ -3,8 +3,8 @@ import HomeButton from "./components/phoneParts/HomeButton";
 import Top from "./components/phoneParts/Top";
 import LockScreen from "./components/screens/LockScreen";
 import { IoIosBatteryFull } from "react-icons/io";
-import { IoWifiOutline } from "react-icons/io5";
-import { RxBorderDotted } from "react-icons/rx";
+import { FaSignal } from "react-icons/fa";
+import { IoWifiSharp } from "react-icons/io5";
 import Notification from "./components/Notification";
 import NotesApp from "./components/screens/NotesApp";
 
@@ -72,9 +72,14 @@ const Phone = () => {
         <Top/>
         <div className="phoneScreen">
             {showTop && <div className="topBar">
-                <p><RxBorderDotted /> <IoWifiOutline /></p>
-                <p>{currTime}</p>
-                <p>100%<IoIosBatteryFull/></p>
+                <div className="topBar-content">
+                    <p className="top-time">{currTime}</p>
+                    <div className="topRight">
+                        <div className="signal"><FaSignal/></div>
+                        <div className="wifi"><IoWifiSharp/></div>
+                        <div className="battery"><IoIosBatteryFull/></div>
+                    </div>
+                </div>
             </div>}
             {showNotif && <div className="pushNotifs">{notif}</div> }
             {activeScreen}
