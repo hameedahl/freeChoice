@@ -4,8 +4,33 @@ import MessageBubble from "../MessageBubble.js";
 import { IoVideocamOutline } from "react-icons/io5";
 import { HiUser } from "react-icons/hi2";
 import MessageApp from "./MessageApp.js";
+import Notification from "../Notification.js";
+import { useState } from "react";
 
-const ChatScreen = ({msg, changeScreen}) => {
+const ChatScreen = ({msg, changeScreen, pushNotif, setNotif}) => {
+    const [chatMsg, setChatMsg] = useState(msg);
+
+    const notify = () => {
+        setTimeout(() => {
+            setNotif(
+            <Notification
+                iconColor = "#e9155c" 
+                iconImg = {null} 
+                title = "PicTok" 
+                subtitle = "Your friend @jess just posted" 
+                content = "Be the first to comment!"
+                // app = {<PicTok changeScreen={changeScreen} 
+                //             pushNotif={pushNotif} 
+                //             setNotif={setNotif}/>}
+                changeScreen={changeScreen}/>)
+            pushNotif(true);
+        }, 2000)
+    }
+
+
+    if (msg.sender === "Jess 🌺") {
+        // text conv or nah?
+    }
 
     return (
         <div className="chatScreen screen">

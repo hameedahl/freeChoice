@@ -1,15 +1,15 @@
 import ChatScreen from "./screens/ChatScreen";
 import { HiUser } from "react-icons/hi2";
 
-const MessageBox = ({msg, changeScreen}) => {
+const MessageBox = ({msg, changeScreen, pushNotif, setNotif}) => {
     return (
         <div className="messageBox" 
             onClick={() => (changeScreen(
                             <ChatScreen msg={msg} 
-                                        changeScreen={changeScreen} 
-                                        prevScreen={
-                                        <MessageBox msg={msg}   
-                                            changeScreen={changeScreen} />}/>))}>
+                                        changeScreen={changeScreen}
+                                        pushNotif={pushNotif} 
+                                        setNotif={setNotif}
+                                        />))}>
             <div className="msgBox-profile">
                 <HiUser className="profile-icon"/>
             </div>

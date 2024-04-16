@@ -12,9 +12,6 @@ import { MdOutlineAddBox } from "react-icons/md";
 import { AiOutlineMessage } from "react-icons/ai";
 
 
-
-
-
 const PicTok = ({changeScreen, pushNotif, setNotif}) => {
     var pathRoot = process.env.PUBLIC_URL + "/images/picTok"
     // add posts of partying and travel and shopping!!!
@@ -38,8 +35,13 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
         caption: "#eclipse2024", img: "/eclipse.jpg", isVideo: false},
         {id: 4, user: "@funnyVideos", likes: "100K", comments: "3K", 
         caption: "🤣", img: "/funny.gif", isVideo: false},
+        {id: 12, user: "@bethMoore", likes: "20K", comments: "400",
+        caption: "Beware of the framing effect! These products are the same, and yet one feels more appealing than the other...", img: "/framing.png", isVideo: false},
         {id: 5, user: "@travelGuide", likes: "13K", comments: "125", 
         caption: "paris always a pleasure <3", img: "/paris.mp4", isVideo: true},
+        {id: 13, user: "@supplies4Kids", likes: "15k", comments: "20", 
+        caption: "Thank you all for your generous donations 🥹! These will be put to good use✏️ Every donation counts, so please view the link in our bio if you want to make a difference! ", img: "/school.jpeg", isVideo: false},
+
         {id: 11, user: "@eventEnvy", likes: "35k", comments: "200", 
         caption: "Only a few days left! Tickets are going fast! 🎫", img: "/fling.jpg", isVideo: false},
     ]
@@ -68,6 +70,16 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
         }
     }
 
+    const handleLike = (e) => {
+        if (e.target.classList.contains("liked")) {
+            e.target.classList.add("not-liked");
+            e.target.classList.remove("liked");
+        } else {
+            e.target.classList.remove("not-liked");
+            e.target.classList.add("liked");
+        }
+    }
+
     return (
         <div className="picTokApp screen">
             <h1>PicTok</h1>
@@ -78,7 +90,7 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
                             {!post.isVideo && <img src={pathRoot + post.img} alt="" className="postImg" />}
                             {post.isVideo && <video loop autoPlay muted src={pathRoot + post.img} alt="" className="postImg" />}
                             <div className="imgCounts">
-                                <span className="likes"><FaHeart className="postIcon"/><p>{post.likes}</p></span>
+                                <span className="likes"><FaHeart className="postIcon not-liked" onClick={(e) => (handleLike(e))} /><p>{post.likes}</p></span>
                                 <span className="comments"><FaComment className="postIcon"/><p>{post.comments}</p></span>
                                 <span className="shareBtn"><FaShare className="postIcon"/><p>Share</p></span>
                             </div>

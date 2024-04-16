@@ -633,6 +633,14 @@ body {
     height: calc(var(--screen-height) - 120px);
 }
 
+.liked {
+    color: rgb(255, 66, 66);
+}
+
+.not-liked {
+    color: #fff;
+}
+
 .bottomMenu-content {
     width: 90%;
     position: absolute;

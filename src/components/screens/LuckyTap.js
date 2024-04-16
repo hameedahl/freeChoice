@@ -11,10 +11,14 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
     const [questionIndex, setQuestionIndex] = useState(0)
 
     const questions = [
-        {id: 1, ques: "I am more likely to change my decision if I am given more options (ie. rational choice theory)", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 2, ques: "I get easily distracted when my phone is around", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 3, ques: "Would you rather get $200 right now or $250 in 1 week?", choices: ["$200 right now", "Neutral", "$250 in a week"]}
-
+        {id: 1, ques: "I am more likely to change my decision if I am given more options.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 2, ques: "I get easily distracted when my phone is around.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 3, ques: "Would you rather get $200 right now or $250 in 1 week?", choices: ["$200 right now", "Neutral", "$250 in a week"]},
+        {id: 4, ques: "If I make an irrational decision, I am more forgiving of myself than if someone else made the same decision.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 5, ques: "I am impulse and I tend to let emotions affect my decision-making.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 6, ques: "I am more of a Homo economicus, making rational decisions by weighing all the relevant factors.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 7, ques: "I always jump at the site of a sale because I'm afraid I'll buy something at a higher price.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 8, ques: "I always jump at the site of a sale because I'm afraid I'll buy something at a higher price.", choices: ["Agree", "Neutral", "Disagree"]},
     ]
 
     const handleGift = () => {

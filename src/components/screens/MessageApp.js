@@ -1,6 +1,6 @@
 import MessageBox from "../MessageBox";
 
-const MessageApp = ({changeScreen}) => {
+const MessageApp = ({changeScreen, pushNotif, setNotif}) => {
     const messageList = [
         {id: 1, from: "Jess 🌺", prev: "did you see eventEnvy? we have to go!!"},
         {id: 0, from: "Bella, Chris, Jess 🌺 & Matt", prev: "Jess sent you a link"},
@@ -16,7 +16,10 @@ const MessageApp = ({changeScreen}) => {
             <h1>Messages</h1>
             <ul className="msgList">
                 {messageList.map((msg) => (
-                    <li key={msg.id}><MessageBox msg={msg} changeScreen={changeScreen}/></li>
+                    <li key={msg.id}><MessageBox msg={msg} 
+                                                 changeScreen={changeScreen}
+                                                 pushNotif={pushNotif} 
+                                                 setNotif={setNotif}/></li>
                 ))}
             </ul>
         </div>
