@@ -4,6 +4,10 @@ import { IoMdClose } from "react-icons/io";
 import Notification from "../Notification";
 import { GiCrownCoin } from "react-icons/gi";
 import LuckyTap from "./LuckyTap";
+import { PiVideo } from "react-icons/pi";
+import { BiHealth } from "react-icons/bi";
+
+
 
 
 const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
@@ -22,7 +26,7 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
                 iconImg = {<GiCrownCoin />} 
                 title = "LuckyTap" 
                 subtitle = "Surprise Gift Inside! 🎉" 
-                content = "Tap here to reveal your surprise 🎁💰"
+                content = "Tap here to reveal your reward 🎁💰"
                 app = {<LuckyTap changeScreen={changeScreen} 
                             pushNotif={pushNotif} 
                             setNotif={setNotif}/>}
@@ -59,6 +63,10 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
         <div className="screen fitFocus darkBack">
             <h1>FitFocus<GiWeightLiftingUp/></h1>
             <h2>"Strive for progress. Not perfection"</h2>
+            <div className="summary">
+
+            </div>
+            <h4>You are behind my friend</h4>
             <ul className="fFmenu">
                 <li onClick={() => (goals())}>Set New Goals</li>
                 <li onClick={() => (log())}>Log Workouts</li>
@@ -116,6 +124,12 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
                     <p>Explore specialized training programs tailored to specific sports or activities, such as soccer, basketball, or martial arts, to enhance performance and skills.</p>
                 </div>
             </div>}
+            <div className="ffBottomBar">
+                <div className="ffBB-content">
+                    <div><PiVideo/></div>
+                    <div><BiHealth/></div>
+                </div>
+            </div>
         </div>
     );
 }

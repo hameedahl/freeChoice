@@ -2,11 +2,15 @@ import { useState, useEffect } from "react";
 import HomeButton from "./components/phoneParts/HomeButton";
 import Top from "./components/phoneParts/Top";
 import LockScreen from "./components/screens/LockScreen";
-import { IoIosBatteryFull } from "react-icons/io";
 import { FaSignal } from "react-icons/fa";
 import { IoWifiSharp } from "react-icons/io5";
 import Notification from "./components/Notification";
-import NotesApp from "./components/screens/NotesApp";
+import WebApp from "./components/screens/WebApp";
+import { PiBatteryFullFill } from "react-icons/pi"; // 1
+import { PiBatteryHighFill } from "react-icons/pi"; // 2
+import { PiBatteryMediumFill } from "react-icons/pi"; // 3
+import { PiBatteryLowFill } from "react-icons/pi"; // 4
+import { PiBatteryEmptyFill } from "react-icons/pi"; // 5
 
 const Phone = () => {
     const [currDate, setCurDate] = useState('');
@@ -14,6 +18,10 @@ const Phone = () => {
     const [showTop, setShowTop] = useState(false);
     const [showNotif, setShowNotif] = useState(false);
     const [notif, setNotif] = useState(null);
+    const [battery, setBattery] = useState(<PiBatteryFullFill />);
+    const [topColor, setTopColor] = useState("black");
+
+
 
     
     
@@ -50,10 +58,7 @@ const Phone = () => {
     }, []);
    
     const [activeScreen, setActiveScreen] = 
-    // useState(<LockScreen changeScreen = {(screen) => setActiveScreen(screen)}
-    //                     currDate={currDate}
-    //                     currTime={currTime}/>);
-        useState(<NotesApp changeScreen = {(screen) => setActiveScreen(screen)}
+        useState(<WebApp changeScreen = {(screen) => setActiveScreen(screen)}
                         pushNotif={setShowNotif}
                         setNotif= {setNotif} />);
 
@@ -62,22 +67,35 @@ const Phone = () => {
     }
 
     useEffect(() => {
-        setShowTop((activeScreen.type.name === "LockScreen")? false: true)
+        const currScreen = activeScreen.type.name
+        setShowTop((currScreen === "LockScreen")? false: true)
         setShowNotif(false);
+        switch (currScreen) {
+            case "FitFocus":
+                setTopColor("white")
 
-
+                break;
+            case "value1":
+            
+                break;
+        
+            default:
+                break;
+        }
+        
     }, [activeScreen]);
+
     return ( 
     <div id="phone">
         <Top/>
         <div className="phoneScreen">
             {showTop && <div className="topBar">
-                <div className="topBar-content">
+                <div className="topBar-content" style={{color: topColor}}>
                     <p className="top-time">{currTime}</p>
                     <div className="topRight">
                         <div className="signal"><FaSignal/></div>
                         <div className="wifi"><IoWifiSharp/></div>
-                        <div className="battery"><IoIosBatteryFull/></div>
+                        <div className="battery">{ battery }</div>
                     </div>
                 </div>
             </div>}

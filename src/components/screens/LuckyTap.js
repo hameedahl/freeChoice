@@ -15,10 +15,12 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
         {id: 2, ques: "I get easily distracted when my phone is around.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 3, ques: "Would you rather get $200 right now or $250 in 1 week?", choices: ["$200 right now", "Neutral", "$250 in a week"]},
         {id: 4, ques: "If I make an irrational decision, I am more forgiving of myself than if someone else made the same decision.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 5, ques: "I am impulse and I tend to let emotions affect my decision-making.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 5, ques: "I am impulsive and I tend to let my emotions affect my decision-making.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 6, ques: "I am more of a Homo economicus, making rational decisions by weighing all the relevant factors.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 7, ques: "I always jump at the site of a sale because I'm afraid I'll buy something at a higher price.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 8, ques: "I always jump at the site of a sale because I'm afraid I'll buy something at a higher price.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 8, ques: "I can easily tell when a company is trying to influence my decision.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 9, ques: "I make sure to use any coupon/promo I am given so it doesn't go to waste.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 10, ques: "I find myself scrolling countless hours through social media.", choices: ["Agree", "Neutral", "Disagree"]},
     ]
 
     const handleGift = () => {
@@ -60,12 +62,13 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
              {(questionIndex !== questions.length) && <h5>How much do you agree with the following statements?</h5>}
                 <div className="survey-content prize-content">
                     <div className="question">
+
                         {(questionIndex < questions.length) && 
                         <>
                             <p><em>{questions[questionIndex].ques}</em></p><br />
-                            <p><input type="radio" name="ans"/> {questions[questionIndex].choices[0]}</p>
-                            <p><input type="radio" name="ans"/> {questions[questionIndex].choices[1]}</p>
-                            <p><input type="radio" name="ans"/> {questions[questionIndex].choices[2]}</p><br />
+                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[0]}</p>
+                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[1]}</p>
+                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[2]}</p><br />
                             {(questionIndex !== questions.length - 1) &&  <div className="nextBtn" onClick={() => (setQuestionIndex(questionIndex + 1))}><IoIosArrowForward/></div>}
                             {(questionIndex === questions.length - 1) && <div className="claimBtn prizeBtn" onClick={() => (notify())}>Claim Your Reward!</div>}
                         </>}
@@ -73,7 +76,7 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
                         <>
                             <h4>Thank you! Your Response has been recorded</h4>
                             <h5>$500 was added to your account ending in 1234!</h5> <br />
-                            <h6>This survey was brought to you by ...For more information on cognition, visit our PicTok @bbh</h6>
+                            <h6>This survey was brought to you by Tech & Science Inc. For more information on cognition and decision making, visit our PicTok @tech&science</h6>
                         </>}
                     </div>
                 </div>
