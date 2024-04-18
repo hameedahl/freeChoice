@@ -104,7 +104,7 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
                 {posts.map((post) => (
                     <div key={post.id} className="post">
                         <div className="imgBox">
-                            {!post.isVideo && <img src={pathRoot + post.img} alt="" className="postImg" />}
+                            {!post.isVideo && <img src={pathRoot + post.img} alt="" className="postImg" loading="lazy" />}
                             {post.isVideo && <video loop autoPlay muted src={pathRoot + post.img} alt="" className="postImg" />}
                             <div className="imgCounts">
                                 <span className="likes"><FaHeart className="postIcon not-liked" onClick={(e) => (handleLike(e))} /><p>{post.likes}</p></span>

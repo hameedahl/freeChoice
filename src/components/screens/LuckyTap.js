@@ -24,7 +24,17 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
     ]
 
     const handleGift = () => {
-        setShowPrize(true)
+        if (!showSurvey) {
+            setShowPrize(true)
+        }
+    }
+
+    const nextQuestion = () => {
+        setQuestionIndex(questionIndex + 1);
+        document.getElementsByClassName("ans")[0].checked = false;
+        document.getElementsByClassName("ans")[1].checked = false;
+        document.getElementsByClassName("ans")[2].checked = false;
+
     }
 
     const notify = () => {
@@ -42,42 +52,43 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
                             setNotif={setNotif}/>}
                 changeScreen={changeScreen}/>)
             pushNotif(true);
-        }, 2000)
+        }, 4000)
     }
 
     return (
         <div className="luckyTap screen">
-            <h1>Feeling Lucky?</h1>
-            <h2>Don't miss out on your chance to unwrap something special! 🎉</h2>
+            {/* <img src={process.env.PUBLIC_URL + "/images/mone.jpg"} alt="" /> */}
+            <div className="luckyContent">
+                <h1>Feeling Lucky?</h1>
+
+           <h2>Don't miss out on your chance to unwrap something special! 🎉</h2>
             {showPrize && <div className="prizeReveal">
                 <div className="prize-content">
                     <h4>Congratulations 💸</h4> 
-                    <p>You won a <strong>$500</strong> gift card! <FaCcMastercard/></p>
-                    <div className="prizeBtn" onClick={() => (setShowSurvey(true))} >Claim Your Reward!</div>
+                    <p>You won a <strong style={{color: "#edc638"}}>$500</strong> gift card! 💳</p>
+                    <div className="prizeBtn" onClick={() => {setShowSurvey(true); setShowPrize(false);}} >Claim Your Reward!</div>
                 </div>
             </div>}
-
             {showSurvey && <div className="survey prizeReveal">
-             <h4>Complete this survey to get your prize 🧠</h4>
+            {(questionIndex !== questions.length) && <h4>Complete this survey to get your prize 🧠</h4>}
              {(questionIndex !== questions.length) && <h5>How much do you agree with the following statements?</h5>}
                 <div className="survey-content prize-content">
                     <div className="question">
-
                         {(questionIndex < questions.length) && 
                         <>
                             <p><em>{questions[questionIndex].ques}</em></p><br />
-                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[0]}</p>
-                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[1]}</p>
-                            <p><input type="radio" name={"ans" + questionIndex}/> {questions[questionIndex].choices[2]}</p><br />
-                            {(questionIndex !== questions.length - 1) &&  <div className="nextBtn" onClick={() => (setQuestionIndex(questionIndex + 1))}><IoIosArrowForward/></div>}
+                            <p><input type="radio" name={"ans"} className="ans"/> {questions[questionIndex].choices[0]}</p>
+                            <p><input type="radio" name={"ans"} className="ans"/> {questions[questionIndex].choices[1]}</p>
+                            <p><input type="radio" name={"ans"} className="ans"/> {questions[questionIndex].choices[2]}</p><br />
+                            {(questionIndex !== questions.length - 1) &&  <div className="nextBtn" onClick={() => (nextQuestion())}><IoIosArrowForward/></div>}
                             {(questionIndex === questions.length - 1) && <div className="claimBtn prizeBtn" onClick={() => (notify())}>Claim Your Reward!</div>}
                         </>}
                         {(questionIndex >= questions.length) && 
-                        <>
-                            <h4>Thank you! Your Response has been recorded</h4>
-                            <h5>$500 was added to your account ending in 1234!</h5> <br />
+                        <div className="tyMsg">
+                            <h4>Thank you! Your response has been recorded 💰💰</h4>
+                            <h5><span style={{color: "#fbd240"}}>$500</span> was added to your account ending in 1234!</h5> <br />
                             <h6>This survey was brought to you by Tech & Science Inc. For more information on cognition and decision making, visit our PicTok @tech&science</h6>
-                        </>}
+                        </div>}
                     </div>
                 </div>
             </div>}
@@ -88,6 +99,8 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
             </div>
             <h3>Tap on a box to reveal what exciting reward you've received today. 💫</h3>
         </div>
+        </div>
+
     );
 }
  

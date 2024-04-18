@@ -505,7 +505,7 @@ body {
   
   .sent {
     align-items: flex-end;
-    text-align: right;
+    text-align: left;
   }
 
   .rcvd .not-last, .sent .not-last  {
@@ -914,32 +914,73 @@ body {
 /* fitFocus */
 
 .fitFocus {
-    background-color: #2f71ff;
+    background-color: #000;
     color: #fff;
+}
+
+.ffContent {
+    overflow-y: auto;
+    height: 90%;
 }
 
 .fitFocus h1 {
     position: relative;
-    top: 50px;
+    top: 40px;
     width: 60%;
     margin: auto;
     padding: 10px;
-    border: 1px solid #fff;
+
+    border: 1px solid #c7ff43;
 }
+
 .fitFocus h2 {
     position: relative;
-    top: 60px;
+    top: 50px;
     font-size: 15px;
 }
 
 .summary {
     position: relative;
-    background-color: #fff;
+    background-color: #000;
     border-radius: 20px;
     width: 93%;
-    height: 70px;
-    top: 70px;
+    height: 90px;
+    top: 60px;
     margin: auto;
+    background-color: #35373a;
+}
+
+.sumContent {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    width: 90%;
+    text-align: left;
+}
+
+.sumContent div {
+    display: inline-block;
+}
+
+.steps {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #c7ff43;
+
+}
+
+.sumText {
+    width: 50%;
+}
+
+.steps p {
+    font-size: 10px;
+    text-align: center;
 }
 
 .fitFocus h4 {
@@ -949,22 +990,45 @@ body {
     font-weight: normal;
 }
 
-
 .fFmenu {
-    position: absolute;
+    position: relative;
     list-style: none;
     text-align: center;  
-    top: 65%;
+    top: 90px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     padding: 10px;
     width: 100%;
 }
 
+.discover {
+    position: relative;
+    top: 120px;
+    width: 90%;
+    text-align: left;
+    margin: auto;
+    font-size: 21px;
+}
+
+.disTitle {
+    margin-bottom: 10px;
+}
+
 .fFmenu li {
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
+    width: 65%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #35373a;
+    color: #c7ff43;
+    margin: auto;
     margin-bottom: 10px;
+}
+
+.celMsg p {
+    color: #ff3e3b;
+
 }
 
 .fFmenu li:hover {
@@ -982,6 +1046,13 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 10px;
     color: black;
+    background-color: black;
+    color:#fff;
+    box-shadow: 1px 3px 20px 5px #35373a;
+
+    /* background-color: #35373a; */
+    
+
 }
 
 .closeBtn {
@@ -996,6 +1067,9 @@ body {
     position: relative;
     top: 30px;
     font-size: 25px;
+    color: #c7ff43;
+
+    
 }
 
 .fFWinContent {
@@ -1004,11 +1078,15 @@ body {
     margin: auto;
     width: 85%;
     height: 70%;
+
 }
 
 .goalsList {
     list-style: none;
     text-align: left;
+    background-color: black;
+    color:#fff;
+
 }
 
 .goalsList li {
@@ -1018,8 +1096,8 @@ body {
 
 .ffBtn {
     position: absolute;
-    background-color: #2f71ff;
-    color: #fff;
+    background-color: #35373a;
+    color: #c7ff43;
     padding: 5px;
     width: 40%;
     border-radius: 10px;
@@ -1036,18 +1114,30 @@ body {
 
 .fFWinContent input {
     margin-right: 5px;
+    accent-color: #c7ff43;
+    color: #fff;
+}
+
+.logList li {
+    font-size: 15px;
+}
+
+.logBtn {
+    bottom: -20px;
+
 }
 
 .fFWinContent p {
     margin-top: 25px;
     font-weight: bold;
-    color: #2f71ff;
+    color: #c7ff43;
 }
 
 .celMsg {
     position: relative;
-    top: 300px;
+    top: 100px;
     width: 90%;
+    font-size: 13px;
     margin: auto;
     text-align: center;
     color: rgb(255, 255, 255);
@@ -1059,26 +1149,22 @@ body {
 }
 
 .disContent {
-    position: relative;
-    overflow-y: auto;
+    font-size: 15px;
 }
 
 .disContent div {
     position: relative;
     width: 100%;
-    background-color: #79a3fd;
-    padding: 20px;
-    font-size: 20px;
+    background-color: #35373a;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 15px;
     border-radius: 10px;
-
+    margin-bottom: 5px;
 }
 
 .disContent p {
-    position: relative;
-    color: #000;
-    text-align: left;
-    font-size: 15px;
-    top: -10px;
+    margin-bottom: 15px;
 }
 
 .ffBottomBar {
@@ -1086,9 +1172,11 @@ body {
     width: 100%;
     bottom: 0;
     background-color: #fff;
-    height: 45px;
-    color: #6f6f6f;
-    font-size: 30px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 25px;
+    background-color: rgba(64, 64, 64, 0.654);
+    border-top: 1px solid #35373a;
 }
 
 .ffBB-content {
@@ -1106,24 +1194,62 @@ body {
     cursor: pointer;
 }
 
+.ffBB-content div:hover {
+    color: #c7ff43;
+}
+
 
 /* Lucky Tap */
 
 .luckyTap {
-    background-color: #27b227;
+    /* background-color: #27b227; */
+    background-image: url(../public/images/money.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Angkor", serif;
+    font-weight: 900;
+    font-style: normal;
     color: #fff;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
 }
+
+.luckyTap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+
+.luckyTap:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    
+  }
 
 .gifts {
     position: absolute;
     margin: auto;
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     font-size: 100px;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #75bc756f;
+    border: 1px solid rgba(255, 225, 103, 0.442);
+    box-shadow: 2px 3px 30px rgb(66, 159, 64);
+    padding: 5px 10px;
+    border-radius: 10px;
+    height: 30%;
 }
 
 .gifts div {
@@ -1131,45 +1257,58 @@ body {
 }
 
 .gifts div:hover {
-    text-shadow: 2px 3px 30px  rgb(255, 225, 103);
+    text-shadow: 2px 3px 30px rgb(255, 225, 103);
 }
 
 .luckyTap h1 {
     position: relative;
     top: 60px;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 3px 30px rgb(66, 159, 64);
+    font-style: italic;
+    color: #b0b94c;
 }
 
 .luckyTap h2 {
     position: absolute;
     top: 120px;
-    font-size: 18px;
-    width: 90%;
+    font-size: 13px;
+    width: 96%;
     left: 50%;
     transform: translateX(-50%);
-    font-style: italic;
+    font-weight: 0;
+    text-shadow: 2px 3px 30px  rgb(66, 159, 64);
+    -webkit-text-stroke-width: .2px;
 }
 
 .luckyTap h3 {
     position: absolute;
-    bottom: 90px;
-    width: 90%;
+    bottom: 50px;
+    width: 95%;
     left: 50%;
+    font-size: 18px;
     transform: translateX(-50%);
+    text-shadow: 2px 3px 30px  rgb(66, 159, 64);
 }
 
 .prizeReveal {
     position: absolute;
+    -webkit-text-stroke-width: .2px;
     width: 80%;
     height: 300px;
-    background-color: #fff;
-    color: #000;
+    color: #fff;
     left: 50%;
     top: 50%;
     border-radius: 20px;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 10px;
-    box-shadow: 1px 3px 20px 5px #68e668;
+    box-shadow: 1px 3px 20px 5px #000000;
+    background-color: rgb(66, 159, 64);
+    /* background-color: #75bc75; */
 }
 
 .prize-content {
@@ -1178,14 +1317,14 @@ body {
 }
 .prizeReveal h4 {
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px;
 }
 
 .prizeReveal p {
     position: relative;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 25px;
     width: 100%;
 }
@@ -1193,28 +1332,40 @@ body {
 .prizeBtn {
     position: absolute;
     bottom: 10px;  
-    background-color: #ffc800;
+    background-color: #edc638;
     padding: 10px;
     border-radius: 10px;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-
 }
 
 .prizeBtn:hover {
     background-color: #fbd240;
 }
 
+.survey {
+    box-shadow: 1px 3px 20px 5px #000000;
+    background-color: rgb(66, 159, 64);
+    line-height: 1;
+    font-family: Helvetica, sans-serif;
+    -webkit-text-stroke-width: .5px;
+
+}
 
 .survey h4 {
-    font-size: 19px;
+    font-size: 16px;
     width: 100%;
+    top: 10px; 
+}
+
+.survey h5 {
+    position: relative;
+    top: 20px; 
 }
 
 .survey-content {
-    /* overflow-y: auto; */
     height: 65%;
     width: 95%;
     margin: auto;
@@ -1228,11 +1379,16 @@ body {
 
 .question {
     position: relative;
-    top: 8px;
+    top: 40px;
+}
+
+.question input {
+    accent-color: #fbd240;
+    cursor: pointer;
 }
 
 .question p {
-    font-size: 14px;
+    font-size: 15px;
     text-align: left;
     margin: 0;
 }
@@ -1242,7 +1398,7 @@ body {
     bottom: 0;
     right: 0;
     margin: auto;
-    background-color: #45c445;
+    background-color: #fbd240;
     width: 20%;
     color: #fff;
     padding: 5px;
@@ -1250,6 +1406,34 @@ body {
     border-radius: 50px;
     cursor: pointer;
     z-index: 1;
+}
+
+.tyMsg {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.tyMsg h4 {
+    font-size: 18px;
+    top: -30px;
+    width: 100%;
+}
+
+
+.tyMsg h5 {
+    position: relative;
+    top: -18px;
+    font-size: 28px;
+
+}
+
+.tyMsg h6 {
+    position: absolute;
+    bottom: -15px;
+    font-size: 12px;
+
+
 }
 
 /* EventEnvy */

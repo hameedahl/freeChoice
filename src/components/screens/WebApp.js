@@ -18,10 +18,10 @@ const WebApp = ({changeScreen, pushNotif, setNotif}) => {
         setTimeout(() => {
             setNotif(
                 <Notification className="animateOpen"
-                iconColor = "#2d2dff" 
+                iconColor = "black" 
                 iconImg = {<GiWeightLiftingUp/>} 
                 title = "FitFocus" 
-                subtitle = "Ready for a new day 💪?" 
+                subtitle = "Ready for a new day? 💪" 
                 content = "Log today's activity and plan your workouts!"
                 app = {<FitFocus changeScreen={changeScreen} 
                                 pushNotif={pushNotif} 
