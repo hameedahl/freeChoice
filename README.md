@@ -5,6 +5,7 @@
 - [About](#about)
 - [Technologies Used](#technologies-used)
 - [How to Run](#how-to-run)
+- [How to Deploy](#how-to-deploy)
 - [Screenshots](#screenshots)
 
 ## About
@@ -28,6 +29,14 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.
+
+## How to Deploy
+
+Build with:
+### `npm run predeploy`
+
+Deploy with:
+### `npm run deploy`
 
 ## Screenshots
 

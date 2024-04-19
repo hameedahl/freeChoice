@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Notification from "../Notification";
