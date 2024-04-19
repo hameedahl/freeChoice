@@ -11,6 +11,7 @@ const MessageBox = ({msg, changeScreen, pushNotif, setNotif}) => {
                                         setNotif={setNotif}
                                         />))}>
             <div className="msgBox-profile">
+                {(msg.from === "Jess 🌺") && <div className="unread"></div>}
                 <HiUser className="profile-icon"/>
             </div>
             <div className="msgBox-text">

@@ -1,36 +1,29 @@
 import { useState, useEffect } from "react";
 import HomeButton from "./components/phoneParts/HomeButton";
 import Top from "./components/phoneParts/Top";
-import LockScreen from "./components/screens/LockScreen";
 import { FaSignal } from "react-icons/fa";
 import { IoWifiSharp } from "react-icons/io5";
-import Notification from "./components/Notification";
 import WebApp from "./components/screens/WebApp";
 import { PiBatteryFullFill } from "react-icons/pi"; // 1
 import { PiBatteryHighFill } from "react-icons/pi"; // 2
 import { PiBatteryMediumFill } from "react-icons/pi"; // 3
 import { PiBatteryLowFill } from "react-icons/pi"; // 4
-import { PiBatteryEmptyFill } from "react-icons/pi"; // 5
 
 const Phone = () => {
-    const [currDate, setCurDate] = useState('');
+    // const [currDate, setCurDate] = useState('');
     const [currTime, setCurTime] = useState('');
-    const [showTop, setShowTop] = useState(false);
+    const [showTop, setShowTop] = useState(true);
     const [showNotif, setShowNotif] = useState(false);
     const [notif, setNotif] = useState(null);
     const [battery, setBattery] = useState(<PiBatteryFullFill />);
     const [topColor, setTopColor] = useState("black");
-
-
-
     
-    
-    const formatDate = () => {
-        const date = new Date();
-        const options = { weekday: 'long', month: 'long', day: 'numeric'};
-        const formattedDate = date.toLocaleDateString(undefined, options);
-        setCurDate(formattedDate);
-    };  
+    // const formatDate = () => {
+    //     const date = new Date();
+    //     const options = { weekday: 'long', month: 'long', day: 'numeric'};
+    //     const formattedDate = date.toLocaleDateString(undefined, options);
+    //     // setCurDate(formattedDate);
+    // };  
 
     const formatTime = () => {
         const date = new Date();
@@ -42,12 +35,12 @@ const Phone = () => {
     };
     
     // get date
-    useEffect(() => {
-        formatDate();
-        // Update the date every 12 hrs
-        const interval = setInterval(formatDate, 720000);
-        return () => clearInterval(interval);
-    }, []);
+    // useEffect(() => {
+    //     formatDate();
+    //     // Update the date every 12 hrs
+    //     const interval = setInterval(formatDate, 720000);
+    //     return () => clearInterval(interval);
+    // }, []);
 
     // get time
     useEffect(() => {
@@ -68,17 +61,33 @@ const Phone = () => {
 
     useEffect(() => {
         const currScreen = activeScreen.type.name
-        setShowTop((currScreen === "LockScreen")? false: true)
+        // setShowTop((currScreen === "LockScreen")? false: true)
         setShowNotif(false);
         switch (currScreen) {
             case "FitFocus":
                 setTopColor("white")
-
                 break;
-            case "value1":
-            
+            case "LuckyTap":
+                setBattery(<PiBatteryHighFill/>);
                 break;
-        
+            case "EventEnvy":
+                setTopColor("black")
+                setBattery(<PiBatteryMediumFill/>);
+                break;
+            case "MessageApp":
+                setTopColor("white")
+                setBattery(<PiBatteryLowFill/>);
+                break;
+            case "ChatScreen":
+                setTopColor("white")
+                setBattery(<PiBatteryLowFill/>);
+                break;
+            case "Battery":
+                setShowTop(false);
+                break;
+            case "LockScreen":
+                setShowTop(false);
+                break;
             default:
                 break;
         }
@@ -95,7 +104,7 @@ const Phone = () => {
                     <div className="topRight">
                         <div className="signal"><FaSignal/></div>
                         <div className="wifi"><IoWifiSharp/></div>
-                        <div className="battery">{ battery }</div>
+                        <div className="top-battery">{ battery }</div>
                     </div>
                 </div>
             </div>}

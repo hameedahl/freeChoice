@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaCcMastercard } from "react-icons/fa";
 import Notification from "../Notification";
 import { GiPhotoCamera } from "react-icons/gi"; // picTok
 import PicTok from "./PicTokApp";
@@ -11,14 +10,14 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
     const [questionIndex, setQuestionIndex] = useState(0)
 
     const questions = [
-        {id: 1, ques: "I am more likely to change my decision if I am given more options.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 1, ques: "I am more likely to change my decision if given more options.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 2, ques: "I get easily distracted when my phone is around.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 3, ques: "Would you rather get $200 right now or $250 in 1 week?", choices: ["$200 right now", "Neutral", "$250 in a week"]},
+        {id: 3, ques: "Would you rather get $500 right now or $550 in 1 week?", choices: ["$500 right now", "Neutral", "$550 in a week"]},
         {id: 4, ques: "If I make an irrational decision, I am more forgiving of myself than if someone else made the same decision.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 5, ques: "I am impulsive and I tend to let my emotions affect my decision-making.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 5, ques: "I am impulsive and tend to let my emotions affect my decision-making.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 6, ques: "I am more of a Homo economicus, making rational decisions by weighing all the relevant factors.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 7, ques: "I always jump at the site of a sale because I'm afraid I'll buy something at a higher price.", choices: ["Agree", "Neutral", "Disagree"]},
-        {id: 8, ques: "I can easily tell when a company is trying to influence my decision.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 7, ques: "I worry about missing out on a sale and paying more later for the same item.", choices: ["Agree", "Neutral", "Disagree"]},
+        {id: 8, ques: "I can quickly tell when a company is trying to influence my decision.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 9, ques: "I make sure to use any coupon/promo I am given so it doesn't go to waste.", choices: ["Agree", "Neutral", "Disagree"]},
         {id: 10, ques: "I find myself scrolling countless hours through social media.", choices: ["Agree", "Neutral", "Disagree"]},
     ]
@@ -81,13 +80,13 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
                             <p><input type="radio" name={"ans"} className="ans"/> {questions[questionIndex].choices[1]}</p>
                             <p><input type="radio" name={"ans"} className="ans"/> {questions[questionIndex].choices[2]}</p><br />
                             {(questionIndex !== questions.length - 1) &&  <div className="nextBtn" onClick={() => (nextQuestion())}><IoIosArrowForward/></div>}
-                            {(questionIndex === questions.length - 1) && <div className="claimBtn prizeBtn" onClick={() => (notify())}>Claim Your Reward!</div>}
+                            {(questionIndex === questions.length - 1) && <div className="claimBtn prizeBtn" onClick={() => (notify())}>Claim Your Reward</div>}
                         </>}
                         {(questionIndex >= questions.length) && 
                         <div className="tyMsg">
                             <h4>Thank you! Your response has been recorded 💰💰</h4>
                             <h5><span style={{color: "#fbd240"}}>$500</span> was added to your account ending in 1234!</h5> <br />
-                            <h6>This survey was brought to you by Tech & Science Inc. For more information on cognition and decision making, visit our PicTok @tech&science</h6>
+                            <h6>This survey is brought to you by Tech & Science Inc. For more information on cognition and decision-making, visit our PicTok @tech&science</h6>
                         </div>}
                     </div>
                 </div>
@@ -97,7 +96,7 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
                 <div onClick={() => handleGift()}>🎁</div>
                 <div onClick={() => handleGift()}>🎁</div>
             </div>
-            <h3>Tap on a box to reveal what exciting reward you've received today. 💫</h3>
+            <h3>Tap on a gift to reveal what exciting reward you've received today. 💫</h3>
         </div>
         </div>
 
