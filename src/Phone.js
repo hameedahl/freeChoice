@@ -60,8 +60,7 @@ const Phone = () => {
     }
 
     useEffect(() => {
-        const currScreen = activeScreen.type.name
-        // setShowTop((currScreen === "LockScreen")? false: true)
+        const currScreen = activeScreen.type.componentName
         setShowNotif(false);
         switch (currScreen) {
             case "FitFocus":

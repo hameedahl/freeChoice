@@ -26,5 +26,7 @@ const Battery = () => {
         </div>
     );
 }
- 
+
+Battery.componentName = 'Battery';
+
 export default Battery;

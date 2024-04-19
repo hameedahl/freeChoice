@@ -24,5 +24,7 @@ const MessageApp = ({changeScreen, pushNotif, setNotif}) => {
         </div>
     );
 }
- 
+
+MessageApp.componentName = 'MessageApp';
+
 export default MessageApp;

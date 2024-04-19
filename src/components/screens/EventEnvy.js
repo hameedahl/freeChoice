@@ -78,4 +78,6 @@ const EventEnvy = ({changeScreen, pushNotif, setNotif}) => {
     );
 }
  
+EventEnvy.componentName = 'EventEnvy';
+
 export default EventEnvy;

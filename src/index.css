@@ -8,6 +8,15 @@
 * {
     padding: 0;
     margin: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    -ms-overflow-style: none; /* hide scrollbar for Internet Explorer, Edge */
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;  /* hide scrollbar for Chrome, Safari, and Opera */
 }
 
 body {
@@ -739,15 +748,6 @@ body {
     
 }
 
-* {
-    -ms-overflow-style: none; /* hide scrollbar for Internet Explorer, Edge */
-    scrollbar-width: none;
-}
-
-*::-webkit-scrollbar {
-    display: none;  /* hide scrollbar for Chrome, Safari, and Opera */
-}
-
 .post {
     margin-bottom: 20px;
 
@@ -1210,10 +1210,8 @@ body {
 /* Lucky Tap */
 
 .luckyTap {
-    /* background-color: #27b227; */
-    background-image: url(../public/images/money.jpg);
-    background-size: cover;
-    background-position: center;
+    background: rgb(118,180,58);
+    background: linear-gradient(90deg, rgba(118,180,58,1) 0%, rgba(29,253,126,1) 50%, rgba(118,180,58,1) 100%);
     font-family: "Angkor", serif;
     font-weight: 900;
     font-style: normal;
@@ -1222,13 +1220,6 @@ body {
     -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
-.luckyTap img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-}
 
 .luckyTap:before {
     content: "";
@@ -1239,8 +1230,7 @@ body {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
-    
-  }
+}
 
 .gifts {
     position: absolute;
@@ -1272,12 +1262,11 @@ body {
     position: relative;
     top: 60px;
     font-size: 35px;
-    color: rgb(255, 255, 255);
     width: 100%;
     text-align: center;
-    text-shadow: 2px 3px 30px rgb(66, 159, 64);
+    text-shadow: 2px 3px 40px rgb(242, 255, 0);
     font-style: italic;
-    color: #b0b94c;
+    color: rgb(199, 255, 168);
 }
 
 .luckyTap h2 {
@@ -1288,18 +1277,21 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-weight: 0;
-    text-shadow: 2px 3px 30px  rgb(66, 159, 64);
+    text-shadow: 2px 3px 40px rgb(242, 255, 0);
     -webkit-text-stroke-width: .2px;
+    line-height: 1.2;
+
 }
 
 .luckyTap h3 {
     position: absolute;
-    bottom: 50px;
+    bottom: 90px;
     width: 95%;
     left: 50%;
     font-size: 18px;
     transform: translateX(-50%);
-    text-shadow: 2px 3px 30px  rgb(66, 159, 64);
+    text-shadow: 2px 3px 40px  rgb(242, 255, 0);
+    line-height: 1.2;
 }
 
 .prizeReveal {
@@ -1314,9 +1306,9 @@ body {
     transform: translate(-50%, -50%);
     z-index: 1;
     padding: 10px;
-    box-shadow: 1px 3px 20px 5px #000000;
-    background-color: rgb(66, 159, 64);
-    /* background-color: #75bc75; */
+    box-shadow: 1px 3px 20px 5px #353d10;
+    background-color: #4cb44c;
+    text-shadow: 2px 3px 20px rgb(47, 111, 47);
 }
 
 .prize-content {
@@ -1340,7 +1332,7 @@ body {
 .prizeBtn {
     position: absolute;
     bottom: 10px;  
-    background-color: #edc638;
+    background-color: #ffcb10;
     padding: 10px;
     border-radius: 10px;
     width: 80%;
@@ -1350,16 +1342,16 @@ body {
 }
 
 .prizeBtn:hover {
-    background-color: #fbd240;
+    background-color: #ffd439;
 }
 
 .survey {
-    box-shadow: 1px 3px 20px 5px #000000;
-    background-color: rgb(66, 159, 64);
+    box-shadow: 1px 3px 20px 5px #353d10;
+    background-color: #4cb44c;
     line-height: 1;
     font-family: Helvetica, sans-serif;
     -webkit-text-stroke-width: .5px;
-
+    text-shadow: 2px 3px 20px rgb(47, 111, 47);
 }
 
 .survey h4 {

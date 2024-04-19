@@ -15,10 +15,11 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
     var pathRoot = process.env.PUBLIC_URL + "/images/picTok"
 
     const posts = [
+       
+        {id: 7, user: "@scientificDigest", likes: "1K", comments: "90", 
+        caption: "What was the last big decision you made?", img: "/sciD.webp", isVideo: false},
         {id: 1, user: "@jess", likes: "20", comments: "2", 
         caption: "Happy Spring!", img: "/spring.gif", isVideo: false},
-        {id: 7, user: "@scientificDigest", likes: "1K", comments: "90", 
-        caption: "What was the last big decision you made?", img: "/sciD.jpg", isVideo: false},
         {id: 6, user: "@fitFocusOfficial", likes: "13K", comments: "125", 
         caption: "Discover the magic of yoga with FitFocus. Strengthen, balance, and find your calm. Start your yoga journey today! 🧘‍♂️💫 #FitFocus", img: "/yoga.jpeg", isVideo: false},
         {id: 2, user: "@foodies", likes: "10K", comments: "1K", 
@@ -30,7 +31,7 @@ const PicTok = ({changeScreen, pushNotif, setNotif}) => {
         {id: 3, user: "@stargazer21", likes: "1M", comments: "100K", 
         caption: "#eclipse2024", img: "/eclipse.jpg", isVideo: false},
         {id: 19, user: "@hameedah", likes: "1400", comments: "100", 
-        caption: "Just got this uber eats notification and it looks a lot like loss aversion. Thoughts? @tech&Science", img: "/uber.webp", isVideo: false},
+        caption: "Just got this uber eats notification and it looks a lot like loss aversion. Thoughts? @tech&Science", img: "/uber.png", isVideo: false},
         {id: 4, user: "@funnyVideos", likes: "100K", comments: "3K", 
         caption: "🤣", img: "/funny.gif", isVideo: false},
         {id: 12, user: "@bethMoore", likes: "20K", comments: "400",

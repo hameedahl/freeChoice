@@ -115,11 +115,6 @@ const ChatScreen = ({msg, changeScreen, pushNotif, setNotif}) => {
                 setNewMsgIndex(newMsgIndex => newMsgIndex + 1)
                 setChats(chats)
                 setScrollAtBot()
-                // chatContainerRef.current?.scrollIntoView();
-
-
-                
-                // updateContainerHeight();
             } else {
                 setDelay(null);
                 killBattery();
@@ -166,11 +161,12 @@ const ChatScreen = ({msg, changeScreen, pushNotif, setNotif}) => {
             </div>
             <div className="chatBottom">
                 <div className="keyboard">
-                    <img src= {process.env.PUBLIC_URL + "/images/keyboard2.png"} alt="" />
+                    <img src= {process.env.PUBLIC_URL + "/images/keyboard.webp"} alt="" />
                 </div>
             </div>
         </div>
     );
 }
  
+ChatScreen.componentName = 'ChatScreen';
 export default ChatScreen;

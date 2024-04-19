@@ -32,10 +32,7 @@ The page will reload when you make changes.
 
 ## How to Deploy
 
-Build with:
-### `npm run predeploy`
-
-Deploy with:
+Build and deploy with:
 ### `npm run deploy`
 
 ## Screenshots

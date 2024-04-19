@@ -147,4 +147,5 @@ const FitFocus = ({changeScreen, pushNotif, setNotif}) => {
     );
 }
  
+FitFocus.componentName = 'FitFocus';
 export default FitFocus;

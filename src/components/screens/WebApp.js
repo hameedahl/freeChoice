@@ -47,7 +47,7 @@ const WebApp = ({changeScreen, pushNotif, setNotif}) => {
                     <h2>Experience First Hand The Illusion Of Choice</h2> <br />
                     <p>Hameedah Lawal <br /> 30 sec read <br /> April 24, 2024</p>
                     <br />
-                    <img src={process.env.PUBLIC_URL + "/images/article.jpeg"} alt="" />
+                    <img src={process.env.PUBLIC_URL + "/images/article.webp"} alt="" />
                     <h3>Topic: Decision-making</h3> <br />
 
                     <p><strong style={{ color: "#0079bb"}}>How-To:</strong> Interactively explore each app's 
@@ -66,9 +66,7 @@ const WebApp = ({changeScreen, pushNotif, setNotif}) => {
                     </p>
                     
                     <br/>
-                    
-
-
+                
                 </div>
             </div>
             <div className="webBottom">
@@ -80,5 +78,7 @@ const WebApp = ({changeScreen, pushNotif, setNotif}) => {
         </div>
     );
 }
- 
+
+WebApp.componentName = 'WebApp';
+
 export default WebApp;

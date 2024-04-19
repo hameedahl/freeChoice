@@ -56,7 +56,6 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
 
     return (
         <div className="luckyTap screen">
-            {/* <img src={process.env.PUBLIC_URL + "/images/mone.jpg"} alt="" /> */}
             <div className="luckyContent">
                 <h1>Feeling Lucky?</h1>
 
@@ -103,4 +102,5 @@ const LuckyTap = ({changeScreen, pushNotif, setNotif}) => {
     );
 }
  
+LuckyTap.componentName = 'LuckyTap';
 export default LuckyTap;
